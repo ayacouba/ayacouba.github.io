@@ -1,0 +1,164 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  padding: 1rem;
+  background-color: #787080;
+  color: #ffffff;
+}
+.introduction p {
+  margin-bottom: 1em;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.recommendation p,
+.articles p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #444444;
+}
+.introduction,
+.recommendations,
+.articles {
+  margin: 20px;
+}
+
+h2 {
+  color: #5a5a5a;
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.recommendation {
+  flex-basis: calc(33.333% - 20px);
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.recommendation:hover {
+  transform: translateY(-5px);
+}
+
+.dishes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.dish {
+  width: 30%;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.dish:hover {
+  transform: scale(1.1);
+}
+
+.dish img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.dish-description {
+  display: none;
+  text-align: center;
+}
+
+.active .dish-description {
+  display: block;
+}
+
+.meal-plan,
+.recommendation-list {
+  float: left;
+  width: 50%;
+  padding: 20px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.content-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+main,
+aside {
+  margin-top: 20px;
+}
+
+main {
+  flex: 3;
+}
+
+aside {
+  flex: 1;
+  padding: 20px;
+  background-color: #787080;
+
+  @media (max-width: 768px) {
+    .content-container {
+      flex-direction: column;
+    }
+
+    main,
+    aside {
+      flex: none;
+    }
+  }
+}
+
+button {
+  background-color: #5a5a5a;
+  border: none;
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  button:hover {
+    background-color: #4a4a4a;
+  }
+
+  .meal-plan button {
+    padding: 5px 10px;
+    font-size: 0.8em;
+  }
+
+  #meal-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #meal-list li p {
+    margin: 0;
+    flex-grow: 1;
+    padding-right: 10px;
+  }
+}
